@@ -1,5 +1,8 @@
-function Airport() {}
+function Airport() {
+  this.hangar = [];
+}
 
-Airport.prototype.land = function() {
+Airport.prototype.land = function(plane) {
+  this.hangar.push(plane);
   return("landing confirmed");
 };
