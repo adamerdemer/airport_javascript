@@ -1,7 +1,12 @@
 function Plane () {
-  this.inflight = true;
+  this.inflight = false;
 }
 
 Plane.prototype.landed = function () {
   this.inflight = false;
+};
+
+Plane.prototype.takenoff = function () {
+  this.inflight = true;
+
 };

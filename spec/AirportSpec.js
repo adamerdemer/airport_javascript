@@ -16,4 +16,11 @@ describe("Airport", function() {
     expect(airport.land()).toBe('landing confirmed');
   });
 
+  it("instruct a plane to take off", function() {
+    airport.land(plane);
+    expect(airport.takeoff()).toBe('take off confirmed');
+
+
+  });
+
 });
