@@ -1,3 +1,5 @@
+'use strict';
+
 describe("Airport", function() {
   var airport;
   var plane;
@@ -19,8 +21,13 @@ describe("Airport", function() {
   it("instruct a plane to take off", function() {
     airport.land(plane);
     expect(airport.takeoff()).toBe('take off confirmed');
-
-
   });
+
+  it("checks plane has left the hangar and is in flight", function(){
+    airport.land(plane);
+    airport.takeoff(plane);
+    expect(airport.hangar).not.toContain(plane);
+  });
+
 
 });
