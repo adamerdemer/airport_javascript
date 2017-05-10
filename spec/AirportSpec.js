@@ -1,5 +1,3 @@
-'use strict';
-
 describe("Airport", function() {
   var airport;
   var plane;
@@ -27,6 +25,11 @@ describe("Airport", function() {
     airport.land(plane);
     airport.takeoff(plane);
     expect(airport.hangar).not.toContain(plane);
+  });
+
+  it("prevents takeoff when weather is stormy",function (){
+    airport.land(plane);
+    expect( function(){ airport.takeoff(plane); }).toThrow(new Error('Unsafe to fly'));
   });
 
 
